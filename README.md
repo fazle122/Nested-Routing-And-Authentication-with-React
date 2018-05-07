@@ -1,3 +1,3 @@
-<b>Nested-Routing-And-Authentication-with-React</b>
+<h2>Nested-Routing-And-Authentication-with-React</h2>
 
 <hr />
