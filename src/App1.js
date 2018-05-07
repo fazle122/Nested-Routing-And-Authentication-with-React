@@ -47,26 +47,63 @@ const privateRroutes = [
 class App1 extends React.Component {
     render() {
         return (
-            <div >
+            <div class="row">
                 <Router>
-                    <div style={{ display: "flex" }}>
-                        <div style={{ padding: "10px", width: "20%", background: "#f0f0f0" }}>
+                    <div>
+                        <div class="side-menu">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="navbar-header">
 
-                            <ul style={{ listStyleType: "none", padding: 0 }}>
-                                <li>
-                                    <Link to="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link to="/student">Students</Link>
-                                </li>
-                                <li>
-                                    <Link to="/teacher">Teachers</Link>
-                                </li>
-                                <li>
-                                    <Link to="/course">Courses</Link>
-                                </li>
-                            </ul>
+                                    <div class="brand-wrapper">
 
+                                        <button type="button" class="navbar-toggle">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="brand-name-wrapper">
+                                        <a class="navbar-brand" href="#">
+                                            LMS
+                                    </a>
+                                    </div>
+
+                                    <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </a>
+
+                                    <div id="search" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <form class="navbar-form" role="search">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Search" />
+                                                </div>
+                                                <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="side-menu-container">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <Link to="/">Home</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/student">Students</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/teacher">Teachers</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/course">Courses</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div>
                             <hr />
 
                             <div>
@@ -87,27 +124,28 @@ class App1 extends React.Component {
                                     />
                                 ))}
                             </div>
-                        </div>
-                        <div style={{ flex: 1, padding: "10px" }}>
-                            {routes.map((route, index) => (
-                                <Route
-                                    key={index}
-                                    path={route.path}
-                                    exact={route.exact}
-                                    component={route.main}
-                                />
-                            ))}
-                            {privateRroutes.map((route, index) => (
-                                <PrivateRoute
-                                    key={index}
-                                    path={route.path}
-                                    exact={route.exact}
-                                    component={route.main}
-                                />
-                            ))}
+                            <div class="container-fluid">
+                                <div class="side-body">
+                                    {routes.map((route, index) => (
+                                        <Route
+                                            key={index}
+                                            path={route.path}
+                                            exact={route.exact}
+                                            component={route.main}
+                                        />
+                                    ))}
+                                    {privateRroutes.map((route, index) => (
+                                        <PrivateRoute
+                                            key={index}
+                                            path={route.path}
+                                            exact={route.exact}
+                                            component={route.main}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </Router>
 
             </div>
