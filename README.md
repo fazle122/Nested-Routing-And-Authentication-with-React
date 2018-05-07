@@ -1,3 +1,5 @@
 <h2>Nested-Routing-And-Authentication-with-React</h2>
 
-<hr />
+<p> $ npm install </p>
+
+<p> $ npm start </p>
